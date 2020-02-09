@@ -40,7 +40,7 @@ export class ImageModal extends React.Component {
                     if ((index + 1) % 3 !== 0) {
                         return (
                         <ImageModalChildDiv key={index}>
-                            <ImageModalRightColumnImg  onClick={this.props.close} src={image.images[0]+".jpg"}>
+                            <ImageModalRightColumnImg  onClick={(e) => this.props.handleClick(e, image.images[0]+".jpg")} src={image.images[0]+".jpg"}>
 
                             </ImageModalRightColumnImg>
                         </ImageModalChildDiv>
@@ -49,7 +49,7 @@ export class ImageModal extends React.Component {
          return (
           <ImageModalChildRect key={index}>
              
-           <ImageModalRect  onClick={this.props.close} src={image.images[0]+".jpg"}></ImageModalRect>
+           <ImageModalRect  onClick={(e) => this.props.handleClick(e, image.images[0]+".jpg")} src={image.images[0]+".jpg"}></ImageModalRect>
            
           </ImageModalChildRect>
          )}

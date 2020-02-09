@@ -88,7 +88,7 @@ import { ChildDiv, ParentDiv,
       <ImageModal
       show={this.state.isShowing}
       close={this.closeModalHandler}
-      onClick={this.se}
+      handleClick={this.handleClick}
       currentImage={this.state.currentImage || null}
       images={this.state.imageData || null}
       />

@@ -13,15 +13,19 @@ import { ChildDiv, ParentDiv,
          this.state = {
             isShowing: false,
             imageData: null,
+            currentImage: null
          }
          this.handleClick = this.handleClick.bind(this);
       }
 
 
-      handleClick() {
-         event.preventDefault()
+      handleClick(event, link) {
+         event.preventDefault();
+         // let image = link;
+         // console.log("curretn image", link)
          this.setState({
-            isShowing: true
+            isShowing: true,
+            currentImage: link
          })
       }
       closeModalHandler = () => {
@@ -49,6 +53,15 @@ import { ChildDiv, ParentDiv,
         this.getData();
         
      }
+
+     handleUpdateCurrentImage(e) {
+        e.preventDefault();
+        const updatedImage = e.target.value();
+        this.setState({
+           currentImage: updatedImage
+        })
+
+     }
       
       render() {
      let data = this.state.imageData;
@@ -63,7 +76,7 @@ import { ChildDiv, ParentDiv,
         {data.map((image, index) => {
          return (
           <ChildDiv key={index} className="child">
-             <ImageButton onClick={this.handleClick}>
+             <ImageButton onClick={(e) => this.handleClick(e, image.images[0]+".jpg")} value={image.images[0]+".jpg"}>
            <ImageWrapper src={image.images[0]+".jpg"}></ImageWrapper>
            </ImageButton>
           </ChildDiv>
@@ -75,10 +88,12 @@ import { ChildDiv, ParentDiv,
       <ImageModal
       show={this.state.isShowing}
       close={this.closeModalHandler}
-      currentImage={this.state.imageData || null}
+      onClick={this.se}
+      currentImage={this.state.currentImage || null}
       images={this.state.imageData || null}
-      >
-      </ImageModal>
+      />
+      
+      
       }
       
        </ParentDiv>

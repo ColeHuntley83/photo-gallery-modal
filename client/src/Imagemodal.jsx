@@ -2,7 +2,8 @@ import React from 'react';
 import { ModalWrapper, ModalCloseButton,ImageModalWrapper,ImageModalButton,
      ModalWrapperDiv, ImageModalMainImg, ImageButton, 
      ImageModalChildDiv, ImageModalRightColumn, ImageWrapper,
-     ImageModalRightColumnImg } from './styling'
+     ImageModalRightColumnImg, ImageModalContainer,
+    ImageModalRect, ImageModalChildRect } from './styling'
 
 export class ImageModal extends React.Component {
     constructor(props) {
@@ -24,26 +25,39 @@ export class ImageModal extends React.Component {
                     position: this.props.show ? "absolute" : "static"
                     
                 }}>
+                    
                     <ImageModalButton onClick={this.props.close}> X</ImageModalButton>
+                    <ImageModalContainer>
                     <ImageModalMainImg>
                         
-                    <ImageModalWrapper src={data[0].images[0]+".jpg"}></ImageModalWrapper>
+                    <ImageModalWrapper src={this.props.currentImage}></ImageModalWrapper>
                     
                     </ImageModalMainImg>
                 <ImageModalRightColumn>
+                    
 
                 {data.map((image, index) => {
+                    if ((index + 1) % 3 !== 0) {
+                        return (
+                        <ImageModalChildDiv key={index}>
+                            <ImageModalRightColumnImg  onClick={this.props.close} src={image.images[0]+".jpg"}>
+
+                            </ImageModalRightColumnImg>
+                        </ImageModalChildDiv>
+                        )
+                    } else {
          return (
-          <ImageModalChildDiv key={index}>
-             <ImageModalButton onClick={this.props.close}>
-           <ImageModalRightColumnImg src={image.images[0]+".jpg"}></ImageModalRightColumnImg>
-           </ImageModalButton>
-          </ImageModalChildDiv>
-         );
+          <ImageModalChildRect key={index}>
+             
+           <ImageModalRect  onClick={this.props.close} src={image.images[0]+".jpg"}></ImageModalRect>
+           
+          </ImageModalChildRect>
+         )}
         })}
                     
 
                 </ImageModalRightColumn>
+                </ImageModalContainer>
 
 
 

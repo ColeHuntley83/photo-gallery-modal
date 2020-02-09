@@ -156,14 +156,29 @@ export const ImageModalRightColumnImg = styled.img`
 
 `
 
+export const ImageModalRect = styled.img`
+border: solid 1px green;
+width: 290px;
+height: 130px;
+min-width: 290px;
+`
+
+export const ImageModalChildRect = styled.div`
+width: 290px;
+height: 130px;
+min-width: 290px;
+`
+
 export const ImageModalButton = styled.button`
 	background: gray;
     position: absolute;
-    margin-left: 1297px;
 	z-index: 1000;
 	width: 20px;
 	height: 20px;
 
 `
-
+export const ImageModalContainer = styled.div`
+display: flex;
+flex-direction: coloumn;
+`
 

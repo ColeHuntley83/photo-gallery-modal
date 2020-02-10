@@ -12,7 +12,7 @@ export const SliderContainer = styled.div`
 
 export const ParentDiv = styled.div`
 width: 100%;
-	overflow: hidden;
+	
 	margin: auto;
 	padding: 1rem;
 `

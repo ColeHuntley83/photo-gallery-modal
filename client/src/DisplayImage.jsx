@@ -76,9 +76,9 @@ import { ChildDiv, ParentDiv,
         {data.map((image, index) => {
          return (
           <ChildDiv key={index} className="child">
-             <ImageButton onClick={(e) => this.handleClick(e, image.images[0]+".jpg")} value={image.images[0]+".jpg"}>
-           <ImageWrapper src={image.images[0]+".jpg"}></ImageWrapper>
-           </ImageButton>
+             
+           <ImageWrapper onClick={(e) => this.handleClick(e, image.images[0]+".jpg")} src={image.images[0]+".jpg"}></ImageWrapper>
+           
           </ChildDiv>
          );
         })}

@@ -19,26 +19,22 @@ width: 100%;
 
 export const ChildDiv = styled.div`
 padding: 5px 5px;
-	background: #b10202;
 	text-align: center;
 	width: 100%;
 	margin-right: 2px;
 	border-radius: 1px;
 	&.child {
-	padding: 1px 2px 2px 1px;
-	background: #b10202;
+	padding: 1px 2px 1px 1px;
 	text-align: center;
 	width: 100%;
-	margin-right: 2px;
-	border-radius: 1px;
+	border-radius: 4px;
+	&:hover {
+    
+	background-color: rgba(50, 115, 220, 0.3);
+  }
 }
 `;
-export const ImageModalChildDiv = styled.div`
- 	height: 130px;
-    width: 145px;
-    border: solid 1px green;
-    min-width: 145px;
-`
+
 
 export const ImageWrapperContainer = styled.div`
 &.slider-wrapper {
@@ -90,17 +86,22 @@ export const SliderWrapperDiv = styled.div`
 export const ImageWrapper = styled.img`
 height: 20rem;
 width: 32rem;
+cursor: pointer;
+&:hover {
+    color: white;
+  }
 `
 
 export const ModalWrapper = styled.div`
-    background: white;
-	display: flex;
 	flex-direction: row;
-	height: 730px;
-	width: 1300px;
+	height: 71rem;
+    width: 104rem;
     border: 1px solid #d0cccc;
     box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
 	transition: all .8s;
+	margin-left: auto;
+    margin-right: auto;
+	background: rgba(0, 0, 0, 0.68);
 	
 
 `
@@ -126,21 +127,33 @@ margin: -61px 0px 0px 0px;
 export const ImageModalMainImg = styled.div`
 	width: 940px;
     height: 730px;
-    border: solid 1px red;
+
 `
 
 export const ImageModalRightColumn = styled.div`
 	overflow-y: scroll;
 	scroll-behavior: smooth;
-	width: 360px;
+	width: 23rem;
+	background-color: white;
+	margin-left: 0.5em;
     height: 730px;
-    border: solid 1px blue;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+	
 `
+export const ImageModalChildDiv = styled.div`
+ 	    height: 130px;
+    width: 9.4em;
+    min-width: 2em;
+    margin-top: 0.1em;
+    margin-right: 0.5em;
+    margin-left: 0.35em;
+    margin-bottom: 0.1em;
+	border-radius:4%;
+	`
 
 export const ImageModalWrapper = styled.img`
 	
@@ -150,35 +163,45 @@ export const ImageModalWrapper = styled.img`
 
 export const ImageModalRightColumnImg = styled.img`
  	height: 130px;
-    width: 145px;
-    border: solid 1px green;
-    min-width: 145px;
+    width: 9.5em;
+    min-width: 150px;
+	border-radius: 4%;
 
 `
 
 export const ImageModalRect = styled.img`
-border: solid 1px green;
-width: 290px;
-height: 130px;
-min-width: 290px;
+	width: 21em;
+    height: 8em;
+    min-width: 290px;
+	border-radius: inherit;
 `
 
-export const ImageModalChildRect = styled.div`
-width: 290px;
-height: 130px;
-min-width: 290px;
+export const ImageModalRectDiv = styled.div`
+    width: 21rem;
+    height: 8em;
+    min-width: 290px;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+	border-radius: 4%;
 `
 
 export const ImageModalButton = styled.button`
-	background: gray;
-    position: absolute;
-	z-index: 1000;
-	width: 20px;
-	height: 20px;
+	background: white;
+    position: sticky;
+    padding-left: 4px;
+    border-radius: 5px;
+    width: 20px;
+    height: 19px;
 
 `
 export const ImageModalContainer = styled.div`
 display: flex;
 flex-direction: coloumn;
+margin-right: -20px;
+display: flex;
+justify-content: center;
+margin-top: 10rem;
 `
 
